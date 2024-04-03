@@ -26,7 +26,7 @@ interface ProjectTypes {
   title: string;
   description: string;
   technologies: Technology[];
-  projectImages: string | StaticImageData;
+  projectImages: string[];
   github: string;
   link: string;
   plugins?: EmblaPluginType[];
@@ -72,13 +72,13 @@ const ProjectCard = ({
                   ]}
                 >
                   <CarouselContent className="">
-                    {projectImages?.map((item, i) => (
+                    {projectImages.map((item, i) => (
                       <CarouselItem key={i}>
                         <div className="flex items-center justify-center">
                           <Image
                             className=" object-coverflex justify-center items-center"
                             src={item}
-                            alt={title}
+                            alt={item}
                             height={300}
                           />
                         </div>
