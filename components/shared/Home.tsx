@@ -69,13 +69,13 @@ function Home() {
               </Link>
             </Button>
 
-            <Button
-              className="dark:bg-gray-900 dark:text-white text-black bg-gray-200 rounded-3xl gap-2 h-16 text-lg"
-              size={"lg"}
+            <Link
+              className="dark:bg-gray-900 dark:text-white text-black bg-gray-200 rounded-3xl gap-2 h-16 text-lg w-44 flex justify-center items-center"
+              href={'#Contact'}
             >
               <Contact />
               Contact
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
