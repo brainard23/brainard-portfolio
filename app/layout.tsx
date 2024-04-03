@@ -12,7 +12,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Brainard Portfolio",
-  description: "Brainard Portfolio a Software Engineer",
+  description: "Brainard Portfolio | Software Engineer",
   icons: {
     icon: "/assets/images/logo.png",
   },
