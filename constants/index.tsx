@@ -36,6 +36,7 @@ import facebook from "../public/assets/facebook.svg";
 import linkedin from "../public/assets/linkedin.svg";
 import gmail from "../public/assets/gmail.svg";
 import { BrainCircuit, Contact, FolderArchive, Home, ScrollText, User } from "lucide-react";
+import { StaticImageData } from "next/image";
 
 export const headerLinks = [
   {
@@ -282,7 +283,7 @@ export const projectsData = [
     previewImage: dbmovie,
     github: "https://github.com/brainard23/moviedb.git",
     link: "https://myreactdbmovie.netlify.app/",
-    projectImages: [dbmovie, dbmovie2, dbmovie3],
+    projectImages: [dbmovie, dbmovie2, dbmovie3] as StaticImageData[],
     technologies: [
       {
         label: "React",
@@ -309,7 +310,7 @@ export const projectsData = [
     previewImage: rental3,
     github: "https://github.com/brainard23/airbnb.git",
     link: "",
-    projectImages: [rental, rental2, rental3],
+    projectImages: [rental, rental2, rental3] as StaticImageData[],
     technologies: [
       {
         label: "Nextjs",
@@ -340,7 +341,7 @@ export const projectsData = [
     previewImage: delivery,
     github: "https://github.com/brainard23/delivery-express.git",
     link: "",
-    projectImages: [delivery, delivery2, delivery3, delivery4],
+    projectImages: [delivery, delivery2, delivery3, delivery4] as StaticImageData[],
     technologies: [
       {
         label: "React Native",

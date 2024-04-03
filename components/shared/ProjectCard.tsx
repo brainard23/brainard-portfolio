@@ -26,7 +26,7 @@ interface ProjectTypes {
   title: string;
   description: string;
   technologies: Technology[];
-  projectImages: string[];
+  projectImages: StaticImageData[];
   github: string;
   link: string;
   plugins?: EmblaPluginType[];
@@ -78,7 +78,7 @@ const ProjectCard = ({
                           <Image
                             className=" object-coverflex justify-center items-center"
                             src={item}
-                            alt={item}
+                            alt={title}
                             height={300}
                           />
                         </div>
