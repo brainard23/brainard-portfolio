@@ -5,11 +5,7 @@ import Home from "@/components/shared/Home";
 import Projects from "@/components/shared/Projects";
 import Skills from "@/components/shared/Skills";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout() {
   return (
     <div className="flex flex-col w-full">
       <Home />
