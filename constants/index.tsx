@@ -309,7 +309,7 @@ export const projectsData = [
       "Build using Next js and mongodb as the database. This project aims its clients to advertise its cars for rentals. It is still work in progress project and I will finish this as soos as possible.",
     previewImage: rental3,
     github: "https://github.com/brainard23/airbnb.git",
-    link: "",
+    link: "https://myride-five.vercel.app/",
     projectImages: [rental, rental2, rental3] as StaticImageData[],
     technologies: [
       {
