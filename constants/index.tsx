@@ -29,6 +29,9 @@ import delivery from "../public/assets/projects/delivery.png";
 import delivery2 from "../public/assets/projects/delivery2.png";
 import delivery3 from "../public/assets/projects/delivery3.png";
 import delivery4 from "../public/assets/projects/delivery4.png";
+import event1 from "../public/assets/projects/event1.png";
+import event2 from "../public/assets/projects/event2.png";
+import event3 from "../public/assets/projects/event3.png";
 import pos from "../public/assets/projects/pos.png";
 import pos2 from "../public/assets/projects/pos2.png";
 import smartphone from "../public/assets/smartphone.svg";
@@ -311,6 +314,37 @@ export const projectsData = [
     github: "https://github.com/brainard23/airbnb.git",
     link: "https://myride-five.vercel.app/",
     projectImages: [rental, rental2, rental3] as StaticImageData[],
+    technologies: [
+      {
+        label: "Nextjs",
+        icon: next,
+      },
+      {
+        label: "Typescript",
+        icon: typescript,
+      },
+      {
+        label: "Tailwind",
+        icon: tailwind,
+      },
+      {
+        label: "MongoDB",
+        icon: mongodb,
+      },
+      {
+        label: "Nodejs",
+        icon: nodejs,
+      },
+    ],
+  },
+  {
+    title: "ReGroup",
+    description:
+      "Build using Next js and mongodb as the database. This project creates events for meetups, tournament, live events, and etc",
+    previewImage: event1,
+    github: "https://github.com/brainard23/event.git",
+    link: "https://event-alpha-umber.vercel.app/",
+    projectImages: [event1, event2, event3] as StaticImageData[],
     technologies: [
       {
         label: "Nextjs",

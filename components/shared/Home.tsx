@@ -61,7 +61,7 @@ function Home() {
               asChild
             >
               <Link
-               href="https://drive.google.com/file/d/18zRaO6UK5DfwQV-ozoFK7Seb0IAWs2I7/view"
+               href="https://drive.google.com/file/d/1LXsvR6qwetRchhPCCEpmkrCy59Gel57o/view?usp=drive_link"
                target="_blank"
               >
                 <FileText />
