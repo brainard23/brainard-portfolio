@@ -15,7 +15,7 @@ const About = () => {
             </h1>
             <div className="flex-col w-full pr-2 text-wrap">
               <p className="mb-4 text-sm">
-                I am software Engineer with more than 2 years of experience. My
+                I am software Engineer with more than 3 years of experience. My
                 journey has been marked by collaborations on diverse software
                 projects, allowing me to hone my keen eye for optimization and
                 productivity. I pride myself on my ability to navigate and

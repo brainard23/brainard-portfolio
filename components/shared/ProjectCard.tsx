@@ -49,8 +49,11 @@ const ProjectCard = ({
     <div>
       <Card key={i} className="flex-row justify-center  items-center mb-2">
         <Dialog>
-          <DialogTrigger className="">
-            <CardContent className="min-h-52 p-2 hover:opacity-75 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300 flex justify-center items-center ">
+          <DialogTrigger className="w-full">
+            <CardContent className="min-h-52 p-2 hover:opacity-75 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300 flex-row justify-center items-center">
+              <div className="w-full flex justify-center items-center">
+              <p>{title}</p>
+              </div>
               <div className="w-full overflow-clip object-cover" style={{ height: 200 }}>
                 <Image
                   src={previewImage}

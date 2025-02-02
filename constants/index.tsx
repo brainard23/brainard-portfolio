@@ -19,6 +19,7 @@ import typescript from "../public/assets/typescript.svg";
 import mongodb from "../public/assets/mongodb.svg";
 import fligno from "../public/assets/fligno.png";
 import obsidian from "../public/assets/obsidian.jpg";
+import VA from "../public/assets/VA.png";
 import dbmovie from "../public/assets/projects/moviedb.png";
 import dbmovie2 from "../public/assets/projects/moviedb2.png";
 import dbmovie3 from "../public/assets/projects/moviedb3.png";
@@ -71,11 +72,11 @@ export const headerLinks = [
 
 export const extraInfo = [
   {
-    label1: "+2",
+    label1: "+3",
     label2: "Years of experience",
   },
   {
-    label1: "100k",
+    label1: "300k",
     label2: "Lines of code written",
   },
   {
@@ -169,7 +170,7 @@ export const skills = [
 export const experiences = [
   {
     company: "Fligno",
-    position: "Associate Software Engineer",
+    position: "Software Engineer",
     date: "March 1, 2022 - Present",
     description:
       "Fligno is a tech company in the Philippines and most of its clients are from Australia. In this company I have learned a lot in programming, this is where I started my journey as a Software Engineer. I was a front end developer at first and then started working in the front end as soon as I learned back end. This is where I showcase my skills in programming and proved my skills in completting my task and work effectively with a team.",
@@ -274,7 +275,7 @@ export const experiences = [
         label: "Javascript",
       },
     ],
-    logo: obsidian,
+    logo: VA,
   },
 ];
 
