@@ -85,12 +85,11 @@ const ProjectCard = ({
                   <CarouselContent>
                     {projectImages.map((item, i) => (
                       <CarouselItem key={i}>
-                        <div className="flex items-center justify-center glass rounded-xl overflow-hidden">
+                        <div className="h-96 glass rounded-xl overflow-hidden">
                           <Image
-                            className="object-cover flex justify-center items-center"
+                            className="object-cover w-full h-full"
                             src={item}
                             alt={title}
-                            height={400}
                           />
                         </div>
                       </CarouselItem>
