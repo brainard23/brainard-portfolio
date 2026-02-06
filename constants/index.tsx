@@ -9,6 +9,7 @@ import shopify from "../public/assets/shopify.svg";
 import vite from "../public/assets/vite.svg";
 import laravel from "../public/assets/laravel.png";
 import github from "../public/assets/git.svg";
+import supabase from "../public/assets/supabase.png";
 import gitlab from "../public/assets/gitlab.svg";
 import vscode from "../public/assets/vscode.svg";
 import tailwind from "../public/assets/tailwind.svg";
@@ -35,6 +36,9 @@ import event2 from "../public/assets/projects/event2.png";
 import event3 from "../public/assets/projects/event3.png";
 import pos from "../public/assets/projects/pos.png";
 import pos2 from "../public/assets/projects/pos2.png";
+import saas1 from "../public/assets/projects/saas1.png";
+import saas2 from "../public/assets/projects/saas2.png";
+import saas3 from "../public/assets/projects/saas3.png";
 import smartphone from "../public/assets/smartphone.svg";
 import facebook from "../public/assets/facebook.svg";
 import linkedin from "../public/assets/linkedin.svg";
@@ -171,7 +175,7 @@ export const experiences = [
   {
     company: "Fligno",
     position: "Software Engineer",
-    date: "March 1, 2022 - Present",
+    date: "March 1, 2022 - November 15, 2025",
     description:
       "Fligno is a tech company in the Philippines and most of its clients are from Australia. In this company I have learned a lot in programming, this is where I started my journey as a Software Engineer. I was a front end developer at first and then started working in the front end as soon as I learned back end. This is where I showcase my skills in programming and proved my skills in completting my task and work effectively with a team.",
 
@@ -420,6 +424,33 @@ export const projectsData = [
       {
         label: "Php",
         icon: php,
+      },
+      {
+        label: "Tailwind",
+        icon: tailwind,
+      },
+    ],
+  },
+   {
+    title: "POS Saas",
+    description:
+      "POS Saas is a web application that allows users to manage their inventory and sales. It also has a POS system that can calculate all the purchase, total sales and inventory. It's in production and accepting clients.",
+    previewImage: saas1,
+    github: "",
+    link: "https://pos-saas-weld.vercel.app",
+    projectImages: [saas1, saas2, saas3],
+    technologies: [
+      {
+        label: "Nextjs",
+        icon: next,
+      },
+      {
+      label: "Supabase",
+        icon: supabase,
+      },
+      {
+        label: "JavaScript",
+        icon: javascript,
       },
       {
         label: "Tailwind",

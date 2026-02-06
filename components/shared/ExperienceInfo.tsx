@@ -46,80 +46,106 @@ const ExperienceInfo = ({
         key={i}
         className={`flex ${
           i % 2 && "flex flex-row-reverse"
-        } justify-center items-top text-wrap relative`}
+        } justify-center items-top text-wrap relative animate-fade-in-up`}
+        style={{ animationDelay: `${i * 150}ms` }}
       >
-        <span className="w-6 h-6 bg-blue-500 absolute top-0 rounded-full" />
+        <span className="w-6 h-6 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 absolute top-0 rounded-full shadow-lg animate-pulse" />
+        
         <div
           className={`w-1/2 h-1/2 ${
             i % 2
-              ? "pl-6 mt-6 border-l-2 border-dotted"
-              : "p-2 border-r-2 border-dotted"
+              ? "pl-6 mt-6 border-l-2 border-dotted border-border/30"
+              : "p-2 border-r-2 mr-6 border-dotted border-border/30"
           } `}
         >
-          <div className="mb-2">
-            <h3 className="text-lg font-semibold">{company}</h3>
-            <p className="text-xs">{position}</p>
-            <p className="text-xs italic">{date}</p>
-          </div>
-          <div className="my-2 mb-3">
-            <p className="text-xs lg:text-sm sm:text-lg">{description}</p>
-          </div>
-          <div
-            className={`max-h-34 transition-max-height ease-in duration-1000 ${
-              !toggle[i] ? "max-h-0 overflow-y-hidden" : ""
-            }`}
-          >
+          <div className="glass rounded-xl p-6 hover-lift transition-all duration-300 border border-border/30">
             <div className="mb-3">
-              <h3 className="text-lg font-semibold">Duties</h3>
-              <ul className="list-disc text-sm">
-                {activities.map((act, i) => (
-                  <li key={i} className="flex justify-start items-center gap-2">
-                    <ChevronRight width={10} className="text-blue-500" />
-                    <p className="text-xs">{act}</p>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="text-xl font-bold gradient-text">{company}</h3>
+              <p className="text-sm font-medium mt-1">{position}</p>
+              <p className="text-xs italic opacity-70 mt-1">{date}</p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-1">Technologies</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 md:grid-cols-5 xl:grid-cols-5 gap-2 items-center">
-                {technologies.map((tech) => (
-                  <div className="flex gap-1 text-xs justify-center items-center">
-                    <Image
-                      width={25}
-                      height={25}
-                      src={tech.icon}
-                      alt={tech.label}
-                    />
-                    {tech.label}
+            
+            <div className="my-3">
+              <p className="text-sm leading-relaxed opacity-90">{description}</p>
+            </div>
+            
+            <div
+              className={`transition-all duration-800 ease-in-out overflow-hidden ${
+                !toggle[i] 
+                  ? "max-h-0 opacity-0" 
+                  : "max-h-[2000px] opacity-100"
+              }`}
+            >
+              <div 
+                className={`transition-all duration-500 ease-out ${
+                  !toggle[i] 
+                    ? "transform -translate-y-4" 
+                    : "transform translate-y-0"
+                }`}
+              >
+                <div className="mb-4 mt-4">
+                  <h3 className="text-lg font-semibold mb-2">Responsibilities</h3>
+                  <ul className="space-y-2">
+                    {activities.map((act, i) => (
+                      <li key={i} className="flex justify-start items-start gap-2">
+                        <ChevronRight width={16} height={16} className="text-primary mt-0.5 flex-shrink-0" />
+                        <p className="text-sm opacity-90">{act}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold mb-3">Technologies</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {technologies.map((tech, idx) => (
+                      <div 
+                        key={idx}
+                        className="rounded-lg p-2 flex gap-2 items-center justify-start cursor-default"
+                      >
+                        <Image
+                          width={20}
+                          height={20}
+                          src={tech.icon}
+                          alt={tech.label}
+                          className="group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <span className="text-xs font-medium">{tech.label}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="">
-            <Button
-              onClick={() => onToggle(i)}
-              className="dark:bg-gray-900 dark:text-white text-black bg-gray-200 rounded-3xl gap-2 h-12 text-sm mt-2"
-            >
-              {!toggle[i] ? (
-                <>
-                  <ChevronDown /> Show more
-                </>
-              ) : (
-                <>
-                  <ChevronUp /> Show less
-                </>
-              )}
-            </Button>
+            <div className="mt-4">
+              <Button
+                onClick={() => onToggle(i)}
+                className="glass rounded-3xl gap-2 h-12 text-sm border border-border/30 hover:border-primary/50 transition-all duration-300"
+                variant="outline"
+              >
+                {!toggle[i] ? (
+                  <>
+                    <ChevronDown className="w-4 h-4" /> Show more
+                  </>
+                ) : (
+                  <>
+                    <ChevronUp className="w-4 h-4" /> Show less
+                  </>
+                )}
+              </Button>
+            </div>
           </div>
         </div>
+        
         <div
-          className={`w-1/2 mt-6  ${i % 2 ? " flex justify-end pr-6" : "pl-6"}`}
+          className={`w-1/2 mt-6 ${i % 2 ? "flex justify-end pr-6" : "pl-6"}`}
         >
-          <div>
-            <Image width={60} height={60} src={logo} alt={company} />
+          <div className="">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <Image width={60} height={60} src={logo} alt={company} className="relative z-10" />
+            </div>
           </div>
         </div>
       </div>

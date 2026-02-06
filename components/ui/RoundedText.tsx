@@ -1,5 +1,5 @@
 interface InputProps {
-  label: string;
+  label: React.ReactNode; // 👈 change from string
 }
 
 const RoundedText: React.FC<InputProps> = ({ label }) => {

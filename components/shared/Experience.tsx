@@ -9,12 +9,15 @@ const Experience = () => {
     <>
       <section
         id="Experience"
-        className="flex-row justify-center items-center w-full"
+        className="relative flex-row justify-center items-center w-full py-20"
       >
-        <div className="lg:mx-36 md:mx-36 lg:flex flex-row justify-center items-center text-wrap mt-5 p-6">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent" />
+        
+        <div className="relative z-10 lg:mx-36 md:mx-36 lg:flex flex-row justify-center items-center text-wrap mt-5 p-6">
           <div className="w-full flex-row items-center justify-center gap-2 ">
-            <h1 className="text-4xl font-semibold my-6">
-              Experience<span className="text-blue-700">.</span>
+            <h1 className="text-4xl md:text-5xl font-bold my-6 animate-fade-in-up">
+              Experience<span className="gradient-text">.</span>
             </h1>
             {experiences.map((experience, i) => (
               <ExperienceInfo
