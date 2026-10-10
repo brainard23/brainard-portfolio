@@ -53,7 +53,7 @@ const Header = () => {
                       style={{ animationDelay: `${i * 100}ms` }}
                     >
                       <Link
-                        href={`#${header.label}`}
+                        href={`#${header.label.replace(/\s+/g, "")}`}
                         className="relative text-lg py-8 pr-[66rem] pl-2 grid group-hover:pl-4 transition-all duration-300"
                       >
                         <div className="font-medium group-hover:gradient-text transition-all duration-300">

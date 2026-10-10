@@ -34,8 +34,6 @@ import delivery4 from "../public/assets/projects/delivery4.png";
 import event1 from "../public/assets/projects/event1.png";
 import event2 from "../public/assets/projects/event2.png";
 import event3 from "../public/assets/projects/event3.png";
-import pos from "../public/assets/projects/pos.png";
-import pos2 from "../public/assets/projects/pos2.png";
 import saas1 from "../public/assets/projects/saas1.png";
 import saas2 from "../public/assets/projects/saas2.png";
 import saas3 from "../public/assets/projects/saas3.png";
@@ -43,7 +41,9 @@ import smartphone from "../public/assets/smartphone.svg";
 import facebook from "../public/assets/facebook.svg";
 import linkedin from "../public/assets/linkedin.svg";
 import gmail from "../public/assets/gmail.svg";
-import { BrainCircuit, Contact, FolderArchive, Home, ScrollText, User } from "lucide-react";
+import zen from "../public/assets/zen.svg";
+import community from "../public/assets/community.svg";
+import { BrainCircuit, Contact, FolderArchive, Globe, Home, ScrollText, User } from "lucide-react";
 import { StaticImageData } from "next/image";
 
 export const headerLinks = [
@@ -65,6 +65,10 @@ export const headerLinks = [
     icon: <ScrollText className="h-24" width={200} />,
   },
   {
+    label: "Live Projects",
+    icon: <Globe className="h-24" width={200} />,
+  },
+  {
     label: "Projects",
     icon: <FolderArchive className="h-24" width={200} />,
   },
@@ -76,7 +80,7 @@ export const headerLinks = [
 
 export const extraInfo = [
   {
-    label1: "+3",
+    label1: "+5",
     label2: "Years of experience",
   },
   {
@@ -167,23 +171,88 @@ export const skills = [
     image: nodejs,
   },
   {
-    label: "React",
-    image: react,
+    label: "Supabase",
+    image: supabase,
   },
 ];
 export const experiences = [
+  {
+    company: "Community Platform (under NDA)",
+    position: "Full Stack Software Engineer",
+    date: "February 2026 - Present",
+    description:
+      "Full-stack developer on a platform that connects people to communities, spanning personal profiles, business collaboration, and freelance opportunities in one social graph.",
+
+    activities: [
+      "Own features end to end across a React and Vite front end and a Laravel REST API, from data model to shipped UI.",
+      "Design profile, discovery, and collaboration flows so members, businesses, and freelancers share one connective experience.",
+    ],
+
+    technologies: [
+      {
+        icon: react,
+        label: "React",
+      },
+      {
+        icon: vite,
+        label: "Vite",
+      },
+      {
+        icon: laravel,
+        label: "Laravel",
+      },
+      {
+        icon: php,
+        label: "Php",
+      },
+    ],
+    logo: community,
+  },
+  {
+    company: "Zen Companies Inc",
+    position: "Senior Software Engineer",
+    date: "February 2026 - July 2026",
+    description:
+      "Led end-to-end development of a multi-tenant SaaS platform, covering Supabase schema, row-level security, role-based JWT auth, and the React/TypeScript UI, shipped to production inside five months.",
+
+    activities: [
+      "Architected a server-authoritative pricing engine on Stripe Checkout, guarded by automated tests that eliminated client/server price drift.",
+      "Set and enforced coding standards across a team of 5 and reviewed every pull request, mentoring junior engineers on architecture decisions.",
+      "Built and maintained CI/CD pipelines (automated builds, type-checks, tests, deploys) and resolved production deployment failures.",
+    ],
+
+    technologies: [
+      {
+        icon: react,
+        label: "React",
+      },
+      {
+        icon: typescript,
+        label: "Typescript",
+      },
+      {
+        icon: supabase,
+        label: "Supabase",
+      },
+      {
+        icon: tailwind,
+        label: "Tailwind",
+      },
+    ],
+    logo: zen,
+  },
   {
     company: "Fligno",
     position: "Software Engineer",
     date: "March 1, 2022 - November 15, 2025",
     description:
-      "Fligno is a tech company in the Philippines and most of its clients are from Australia. In this company I have learned a lot in programming, this is where I started my journey as a Software Engineer. I was a front end developer at first and then started working in the front end as soon as I learned back end. This is where I showcase my skills in programming and proved my skills in completting my task and work effectively with a team.",
+      "Built the ticket purchase flow for a live-event ticketing platform in the Philippines and Australia: dynamic per-event pricing, seat selection, payment integration and QR issuance, serving thousands of buyers per show and $1M+ USD in ticket sales.",
 
     activities: [
-      "Write clean, efficient, and maintainable code according to industry best practices and coding standards.",
-      "Identify and fix bugs and issues through debugging and troubleshooting techniques.",
-      "Collaborate with other team members to ensure effective teamwork and project success.",
-      "Use version control systems to manage and track changes to the software codebase.",
+      "Designed the per-event pricing and configuration model so organizers could launch a new concert without engineering involvement, pricing and structuring each show differently on one codebase.",
+      "Shipped organizer and admin dashboards with real-time sales data, customer management, role-based access and reporting.",
+      "Delivered React + Vite SPAs and Laravel REST APIs, plus cross-platform React Native apps served from the same API surface.",
+      "Owned production debugging across web and mobile releases, from API latency under launch-day load to release-blocking crashes; supported shows for Eraserheads, Moira and Gary Valenciano.",
     ],
 
     technologies: [
@@ -208,16 +277,15 @@ export const experiences = [
   },
   {
     company: "Obsidian Media",
-    position: "Content Analyst | Product Analyst | Web Developer",
-    date: "January 2021 - October 2022",
+    position: "Web Developer & Product Analyst",
+    date: "January 2021 - March 2022",
     description:
       "Obsidean Medai is a company in Denmark that provides products reviews to its viewers. They mainly used Wordpress to publish their articles about the products pros and cons, trending products and top products in the market. I was a product analyst at first and then I offer my service to build the content using Elementor and fixing some minor error in the front end",
 
     activities: [
-      "Collect and analyze product-related data, such as sales figures, customer feedback, and market trends.",
-      "Review and enhance product descriptions, titles, images, and other content elements to improve search engine visibility.",
-      "Analyze the performance of product content.",
-      "Fix bugs found in WordPress to ensure the page readability and visual.",
+      "Resolved WordPress defects affecting UX and page performance across a live product catalogue.",
+      "Improved SEO and product-page conversion using traffic and product data analysis.",
+      "Customized Elementor and Gutenberg themes so a non-technical content team could ship pages unaided.",
     ],
 
     technologies: [
@@ -396,41 +464,6 @@ export const projectsData = [
       },
     ],
   },
-  {
-    title: "Inventory Management System",
-    description:
-      "This app aims to handle inventory. Able to do barcode scanning to get information of the product in the system and can create new products and store it to the system. It also has POS system that can calculate all the purchase, total sales and inventory. This project is still work on progress.",
-    previewImage: pos,
-    github: "https://github.com/brainard23/pos-web.git",
-    link: "",
-    projectImages: [pos, pos2],
-    technologies: [
-      {
-        label: "React",
-        icon: react,
-      },
-      {
-        label: "Vite",
-        icon: vite,
-      },
-      {
-        label: "Laravel",
-        icon: laravel,
-      },
-      {
-        label: "JavaScript",
-        icon: javascript,
-      },
-      {
-        label: "Php",
-        icon: php,
-      },
-      {
-        label: "Tailwind",
-        icon: tailwind,
-      },
-    ],
-  },
    {
     title: "POS Saas",
     description:
@@ -462,8 +495,8 @@ export const projectsData = [
 
 export const contactDetails = [
   {
-    label: "63+ 916 654 3866",
-    link: "tel:63+9166543866",
+    label: "+63 924 1835 185",
+    link: "tel:+639241835185",
     icon: smartphone,
   },
   {

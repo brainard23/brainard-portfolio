@@ -19,7 +19,7 @@ const About = () => {
             <div className="glass rounded-2xl p-8 hover-lift">
               <div className="flex-col w-full pr-2 text-wrap space-y-4">
              <p className="text-sm md:text-base leading-relaxed opacity-90">
-  I’m a software engineer with over three years of hands-on experience building
+  I’m a software engineer with over five years of hands-on experience building
   and collaborating on a wide range of software projects. Throughout my journey,
   I’ve developed a strong focus on optimization, clean architecture, and
   productivity. I’m comfortable working in fast-paced environments and enjoy

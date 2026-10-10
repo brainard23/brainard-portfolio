@@ -21,6 +21,7 @@ const Experience = () => {
             </h1>
             {experiences.map((experience, i) => (
               <ExperienceInfo
+                key={experience.company}
                 i={i}
                 logo={experience.logo}
                 length={experiences.length}

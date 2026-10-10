@@ -43,26 +43,28 @@ const ExperienceInfo = ({
   return (
     <>
       <div
-        key={i}
         className={`flex ${
-          i % 2 && "flex flex-row-reverse"
-        } justify-center items-top text-wrap relative animate-fade-in-up`}
+          i % 2 ? "md:flex-row-reverse" : ""
+        } md:justify-center items-start text-wrap relative animate-fade-in-up`}
         style={{ animationDelay: `${i * 150}ms` }}
       >
-        <span className="w-6 h-6 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 absolute top-0 rounded-full shadow-lg animate-pulse" />
-        
+        <span className="w-6 h-6 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 absolute top-0 -left-[11px] md:left-auto rounded-full shadow-lg animate-pulse" />
+
         <div
-          className={`w-1/2 h-1/2 ${
+          className={`w-full md:w-1/2 pl-6 pb-6 border-l-2 border-dotted border-border/30 ${
             i % 2
-              ? "pl-6 mt-6 border-l-2 border-dotted border-border/30"
-              : "p-2 border-r-2 mr-6 border-dotted border-border/30"
-          } `}
+              ? "md:mt-6 md:pb-0"
+              : "md:pl-2 md:p-2 md:pb-0 md:border-l-0 md:border-r-2 md:mr-6"
+          }`}
         >
           <div className="glass rounded-xl p-6 hover-lift transition-all duration-300 border border-border/30">
-            <div className="mb-3">
-              <h3 className="text-xl font-bold gradient-text">{company}</h3>
-              <p className="text-sm font-medium mt-1">{position}</p>
-              <p className="text-xs italic opacity-70 mt-1">{date}</p>
+            <div className="mb-3 flex items-start justify-between gap-3">
+              <div>
+                <h3 className="text-xl font-bold gradient-text">{company}</h3>
+                <p className="text-sm font-medium mt-1">{position}</p>
+                <p className="text-xs italic opacity-70 mt-1">{date}</p>
+              </div>
+              <Image width={40} height={40} src={logo} alt={company} className="md:hidden flex-shrink-0" />
             </div>
             
             <div className="my-3">
@@ -139,7 +141,7 @@ const ExperienceInfo = ({
         </div>
         
         <div
-          className={`w-1/2 mt-6 ${i % 2 ? "flex justify-end pr-6" : "pl-6"}`}
+          className={`hidden md:block w-1/2 mt-6 ${i % 2 ? "md:flex justify-end pr-6" : "pl-6"}`}
         >
           <div className="">
             <div className="relative">

@@ -19,6 +19,7 @@ const Projects = () => {
             <div className="lg:grid grid-cols-2 sm:flex-row gap-4">
               {projectsData.map((project, i) => (
                 <ProjectCard 
+                key={project.title}
                 i={i}
                 previewImage={project.previewImage}
                 title={project.title}
