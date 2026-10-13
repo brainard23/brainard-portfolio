@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { extraInfo } from "@/constants";
 import { Contact, FileText } from "lucide-react";
 import Image from "next/image";
+import { resumeUrl } from "@/constants/about";
 import myPic from "../../public/assets/me.png";
 import Link from "next/link";
 
@@ -86,7 +87,7 @@ function Home() {
                 asChild
               >
                 <Link
-                  href="https://drive.google.com/file/d/1BMhpd4kQY1zGbVz-Cnf9acYhEIxt26Je/view?usp=sharing"
+                  href={resumeUrl}
                   target="_blank"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-red-400 via-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

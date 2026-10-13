@@ -1,0 +1,61 @@
+.bob {
+  animation: bob 2.4s ease-in-out infinite;
+}
+
+.blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 4s infinite;
+}
+
+.wave {
+  transform-box: fill-box;
+  transform-origin: 10% 90%;
+  animation: wave 1.2s ease-in-out 3;
+}
+
+.typing .bob {
+  animation-duration: 0.8s;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-22deg);
+  }
+  75% {
+    transform: rotate(12deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bob,
+  .blink,
+  .wave {
+    animation: none;
+  }
+}
