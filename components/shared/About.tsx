@@ -1,5 +1,6 @@
 import Image from "next/image";
 import coding from "../../public/assets/coding.png";
+import { aboutParagraphs } from "@/constants/about";
 
 const About = () => {
   return (
@@ -18,22 +19,14 @@ const About = () => {
             </h1>
             <div className="glass rounded-2xl p-8 hover-lift">
               <div className="flex-col w-full pr-2 text-wrap space-y-4">
-             <p className="text-sm md:text-base leading-relaxed opacity-90">
-  I’m a software engineer with over five years of hands-on experience building
-  and collaborating on a wide range of software projects. Throughout my journey,
-  I’ve developed a strong focus on optimization, clean architecture, and
-  productivity. I’m comfortable working in fast-paced environments and enjoy
-  continuously challenging myself to learn, improve, and deliver better
-  solutions.
-</p>
-<p className="text-sm md:text-base leading-relaxed opacity-90">
-  I’m motivated by the opportunity to work on meaningful products and contribute
-  to high-impact teams. As a full-stack developer, I’m passionate about turning
-  ideas into reliable, scalable solutions that create real value. I’m committed
-  to continuous learning, technical excellence, and strong collaboration as I
-  grow in my career.
-</p>
-
+                {aboutParagraphs.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="text-sm md:text-base leading-relaxed opacity-90"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
