@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import whodini from "../public/assets/projects/live-whodini.jpg";
+import ndaCommunity from "../public/assets/projects/live-nda-community.jpg";
 import zenMarine from "../public/assets/projects/live-zenmarine.jpg";
 import sanaAll from "../public/assets/projects/live-sanaall.jpg";
 import greenLife from "../public/assets/projects/live-greenlife.jpg";
@@ -11,14 +11,15 @@ export interface LiveProject {
   summary: string;
   highlights: string[];
   stack: string[];
-  url: string;
-  linkLabel: string;
+  /** Omit for NDA projects: the card shows no link. */
+  url?: string;
+  linkLabel?: string;
   image?: StaticImageData;
 }
 
 export const liveProjects: LiveProject[] = [
   {
-    title: "Whodini",
+    title: "Community Platform (NDA)",
     role: "Full Stack Developer · 2026 – Present",
     summary:
       "A platform that connects people to communities, spanning personal profiles, business collaboration and freelance opportunities in one social graph.",
@@ -27,9 +28,7 @@ export const liveProjects: LiveProject[] = [
       "Profile, discovery and collaboration flows for members, businesses and freelancers",
     ],
     stack: ["React", "Vite", "TypeScript", "Laravel", "REST API"],
-    url: "https://www.whodini.io",
-    linkLabel: "Visit site",
-    image: whodini,
+    image: ndaCommunity,
   },
   {
     title: "Zen Marine Charter",
