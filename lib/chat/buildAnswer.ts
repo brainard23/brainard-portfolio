@@ -8,6 +8,7 @@ const MENU_OPTIONS: ChatOption[] = [
   { label: "What's his tech stack?", nodeId: "stack" },
   { label: "Where has he worked?", nodeId: "work" },
   { label: "What has he built?", nodeId: "built" },
+  { label: "Can I see his live work?", nodeId: "live" },
   { label: "Is he available? How do I contact him?", nodeId: "contact" },
   { label: "Can I see his resume?", nodeId: "resume" },
 ];
@@ -150,6 +151,25 @@ const resume = (): ChatAnswer => ({
   options: [BACK_TO_MENU],
 });
 
+const liveWork = (): ChatAnswer => ({
+  paragraphs: [
+    "Here's his live production work. Open a site, or pick one for details:",
+  ],
+  actions: [
+    ...liveProjects.flatMap(({ title, url }): ChatAction[] =>
+      url ? [{ kind: "link", label: title, href: url }] : []
+    ),
+    { kind: "section", label: "See Live Projects", sectionId: "LiveProjects" },
+  ],
+  options: [
+    ...liveProjects.map((project, index) => ({
+      label: project.title,
+      nodeId: `live:${index}`,
+    })),
+    BACK_TO_MENU,
+  ],
+});
+
 /** Parses ids like "work:2" into the list index, or null when out of range. */
 const indexFrom = (nodeId: string, prefix: string, length: number) => {
   if (!nodeId.startsWith(`${prefix}:`)) return null;
@@ -174,6 +194,8 @@ export const buildAnswer = (nodeId: string): ChatAnswer => {
       return work();
     case "built":
       return built();
+    case "live":
+      return liveWork();
     case "contact":
       return contact();
     case "resume":

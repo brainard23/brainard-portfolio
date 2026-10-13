@@ -5,12 +5,13 @@ const optionLabels = (nodeId: string) =>
   buildAnswer(nodeId).options.map((option) => option.label);
 
 describe("buildAnswer", () => {
-  it("menu offers the six starter questions", () => {
+  it("menu offers the seven starter questions", () => {
     expect(optionLabels("menu")).toEqual([
       "Who is Brainard?",
       "What's his tech stack?",
       "Where has he worked?",
       "What has he built?",
+      "Can I see his live work?",
       "Is he available? How do I contact him?",
       "Can I see his resume?",
     ]);
@@ -186,5 +187,27 @@ describe("buildAnswer", () => {
   it("an unknown or out-of-range id falls back to the menu", () => {
     expect(buildAnswer("work:99")).toEqual(buildAnswer("menu"));
     expect(buildAnswer("nope")).toEqual(buildAnswer("menu"));
+  });
+
+  it("live work links straight to every public live site", () => {
+    const answer = buildAnswer("live");
+
+    expect(answer.actions).toEqual([
+      { kind: "link", label: "Zen Marine Charter", href: "https://www.zenmarinecharter.com" },
+      { kind: "link", label: "Sana All", href: "https://apps.apple.com/us/app/sana-all/id6456751289" },
+      { kind: "link", label: "Green Life Clinics", href: "https://greenlifeclinics.com.au" },
+      { kind: "link", label: "Pet Price", href: "https://petprice.com.au" },
+      { kind: "link", label: "Plan Desk One", href: "https://plandesk1.com" },
+      { kind: "section", label: "See Live Projects", sectionId: "LiveProjects" },
+    ]);
+    expect(optionLabels("live")).toEqual([
+      "Community Platform (NDA)",
+      "Zen Marine Charter",
+      "Sana All",
+      "Green Life Clinics",
+      "Pet Price",
+      "Plan Desk One",
+      "↩ Back to menu",
+    ]);
   });
 });
